@@ -1,0 +1,95 @@
+body {
+    margin: 80px;
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://blog.pixelastic.com/img/files/2016-06-01/background.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.header-Marvel-DC {
+    background-image: url('https://static1.colliderimages.com/wordpress/wp-content/uploads/2023/12/batman-and-iron-man-marvel-dc.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 35vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px;
+}
+
+.header-Marvel-DC>h1 {
+    font-family: 'Bangers', sans-serif;
+    color: white;
+    font-size: 10vw;
+    text-shadow: 2px 2px 4px black;
+    text-align: center;
+    max-width: 90%;
+    white-space: nowrap;
+}
+
+.container-starwars {
+    background-image: url('https://elchapuzasinformatico.com/wp-content/uploads/2020/06/Star-Wars-Squadrons-1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 20vh;
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    min-height: 120px;
+    margin-top: 40px;
+}
+
+.container-starwars>a {
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    font-size: 6vw;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px black;
+    transition: transform 0.3s ease;
+}
+
+.container-starwars>a:hover {
+    transform: scale(1.05);
+    transition: 1s;
+}
+
+.container-busqueda {
+    width: 50%;
+    margin: auto;
+}
+
+img {
+    width: 100%;
+    height: 35vh;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+p {
+    text-align: justify;
+}
+
+.tarjeta {
+    padding: 20px;
+    padding-top: 0;
+    border-radius: 5px;
+}
+
+.tarjeta:hover {
+    transform: scale(1.01);
+    transition: 1s;
+}
+
+hr {
+    line-height: 100px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,110 @@
+body {
+    background: url('https://wallpapersmug.com/download/3840x2160/fcf8a5/minimal-star-wars-the-mandalorian-silhouette.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 80px;
+    font-family: 'Arial', sans-serif;
+}
+
+.header-StarWars {
+    background-image: url('https://elchapuzasinformatico.com/wp-content/uploads/2020/06/Star-Wars-Squadrons-1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-StarWars>h1 {
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    font-size: 7vw;
+    text-shadow: 2px 2px 4px black;
+}
+
+.container-marvel-dc {
+    background-image: url('https://static1.colliderimages.com/wordpress/wp-content/uploads/2023/12/batman-and-iron-man-marvel-dc.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 20vh;
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    min-height: 120px;
+    margin-top: 40px;
+    box-shadow: 0px 1px 10px;
+}
+
+.container-marvel-dc a {
+    font-family: 'Bangers', sans-serif;
+    color: white;
+    font-size: 6vw;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px black;
+    transition: transform 0.3s ease;
+}
+
+.container-marvel-dc>a:hover {
+    transform: scale(1.05);
+    transition: 1s;
+}
+
+.menu-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.form-control {
+    width: 15vw;
+}
+
+.boton {
+    padding: 10px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #000000;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.boton:hover {
+    transform: scale(1.01);
+}
+
+.botones-container {
+    display: flex;
+    gap: 10px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card:hover {
+    transform: scale(1.01);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .menu-superior {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-control {
+        width: 80%;
+    }
+}
