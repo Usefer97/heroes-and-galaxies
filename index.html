@@ -4,102 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marvel-DC</title>
+    <title>Marvel y DC</title>
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        body {
-            margin: 80px;
-            background-color: #f0f0f0;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .header-Marvel_DC {
-            background-image: url('https://static1.colliderimages.com/wordpress/wp-content/uploads/2023/12/batman-and-iron-man-marvel-dc.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 40vh;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 250px;
-        }
-
-        .header-Marvel_DC>h1 {
-            font-family: 'Bangers', sans-serif;
-            color: white;
-            font-size: 10vw;
-            text-shadow: 2px 2px 4px black;
-            text-align: center;
-            max-width: 90%;
-            white-space: nowrap;
-        }
-
-        .container-starwars {
-            background-image: url('https://elchapuzasinformatico.com/wp-content/uploads/2020/06/Star-Wars-Squadrons-1.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 20vh;
-            margin: 5%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10px;
-            min-height: 120px;
-        }
-
-        .container-starwars>a {
-            font-family: 'Russo One', sans-serif;
-            color: white;
-            font-size: 6vw;
-            text-decoration: none;
-            text-shadow: 2px 2px 4px black;
-            transition: transform 0.3s ease;
-        }
-
-        .container-starwars>a:hover {
-            transform: scale(1.05);
-            transition: 1s;
-        }
-
-        img {
-            width: 100%;
-            height: 30vh;
-            border-radius: 5px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        p {
-            text-align: justify;
-        }
-
-        #tarjetas {
-            padding: 20px;
-            padding-top: 0;
-            border-radius: 5px;
-        }
-
-        #tarjetas:hover {
-            transform: scale(1.01);
-            transition: 1s;
-        }
-
-        hr {
-            line-height: 100px;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-    </style>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-    <div class="header-Marvel_DC">
+    <div class="header-Marvel-DC">
         <h1>DC - MARVEL</h1>
     </div>
 
@@ -107,63 +21,26 @@
         <a href="starwars.html">STAR WARS</a>
     </div>
 
-    <div class="row" id="contenidos">
+    <div class="container-busqueda">
+        <input type="text" id="barraBusqueda" placeholder="Buscar héroe..." class="form-control">
+    </div>
+
+
+    <div class="row" id="contenidoMarvel">
         <div class="col-12 alert fs-4" style="margin-top: 20px;">
             <h2>MARVEL</h2>
             <hr>
         </div>
     </div>
 
-    <div class="row" id="contenidos2">
+    <div class="row" id="contenidoDC">
         <div class="col-12 alert fs-4" style="margin-top: 20px;">
             <h2>DC</h2>
             <hr>
         </div>
     </div>
 
-    <script>
-        async function lecturaJSON() {
-            const respuesta = await fetch('superhero.json');
-            const heroes = await respuesta.json();
-
-            heroes.forEach(heroe => {
-
-                if (heroe.grupo == "marvel") {
-                    document.getElementById("contenidos").innerHTML += `
-                        <div class="col-lg-4" id="tarjetas">
-                            <a href="superheroe.html?id=${heroe.id}">
-                                <div style="position: relative;">
-                                    <img src="${heroe.imagen1}" alt="${heroe.nombre}">
-                                    <div class="precio">${heroe.precio} €</div>
-                                </div>
-                                <h4 class="text-center">${heroe.nombre}</h4>
-                            </a>
-                        </div>
-                    `;
-                } else {
-                    document.getElementById("contenidos2").innerHTML += `
-                        <div class="col-lg-4" id="tarjetas">
-                            <a href="superheroe.html?id=${heroe.id}">
-                                <div style="position: relative;">
-                                    <img src="${heroe.imagen1}" alt="${heroe.nombre}">
-                                    <div class="precio">${heroe.precio} €</div>
-                                </div>
-                                <h4 class="text-center">${heroe.nombre}</h4>
-                            </a>
-                        </div>
-                    `;
-                }
-            });
-        }
-
-        lecturaJSON();
-    </script>
-
-
-
-
-
-
+    <script src="js/index.js"></script>
 </body>
 
 </html>
