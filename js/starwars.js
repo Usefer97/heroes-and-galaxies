@@ -100,7 +100,7 @@ async function lecturaSpecies() {
 const filtroinput = document.getElementById('searchInput');
 const tarjetascontenedor = document.getElementById('contenidos');
 
-// Filtro de búsqueda en tiempo real cuando el usuario escribe
+// Filtro en tiempo real cuando el usuario escribe
 filtroinput.addEventListener('keyup', function () {
     const filtrotexto = filtroinput.value.toLowerCase();
     const tarjetas = tarjetascontenedor.querySelectorAll('.tarjeta');
