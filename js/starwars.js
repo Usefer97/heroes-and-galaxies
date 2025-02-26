@@ -1,7 +1,9 @@
+// Función que carga los personajes de Star Wars desde la API
 async function lecturaPeople() {
     const url = 'https://swapi.dev/api/people/';
     document.getElementById('contenidos').innerHTML = '';
 
+    // Recorremos los primeros 10 personajes desde la API
     for (let n = 1; n <= 10; n++) {
         const respuesta = await fetch(`${url}${n}`);
         const datos = await respuesta.json();
@@ -21,10 +23,12 @@ async function lecturaPeople() {
     }
 }
 
+// Función que carga los planetas de Star Wars desde la API
 async function lecturaPlanets() {
     const url = 'https://swapi.dev/api/planets/';
     document.getElementById('contenidos').innerHTML = '';
 
+    // Recorremos los primeros 10 planetas desde la API
     for (let n = 1; n <= 10; n++) {
         const respuesta = await fetch(`${url}${n}`);
         const datos = await respuesta.json();
@@ -44,10 +48,12 @@ async function lecturaPlanets() {
     }
 }
 
+// Función que carga los vehiculos de Star Wars desde la API
 async function lecturaVehicles() {
     const url = 'https://swapi.dev/api/vehicles/';
     document.getElementById('contenidos').innerHTML = '';
 
+    // Recorremos los primeros 10 vehiculos desde la API
     for (let n = 1; n <= 10; n++) {
         const respuesta = await fetch(`${url}${n}`);
         const datos = await respuesta.json();
@@ -67,10 +73,12 @@ async function lecturaVehicles() {
     }
 }
 
+// Función que carga las especies de Star Wars desde la API
 async function lecturaSpecies() {
     const url = 'https://swapi.dev/api/species/';
     document.getElementById('contenidos').innerHTML = '';
 
+    // Recorremos las primeras 10 especies desde la API
     for (let n = 1; n <= 10; n++) {
         const respuesta = await fetch(`${url}${n}`);
         const datos = await respuesta.json();
