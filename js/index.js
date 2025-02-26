@@ -1,61 +1,72 @@
-// Función para leer el archivo JSON y obtener los héroes
 async function lecturaJSON() {
     const respuesta = await fetch('superhero.json');
     const heroes = await respuesta.json();
-
     mostrarHeroes(heroes);
 }
 
-// Función para mostrar los héroes de Marvel y DC en el DOM
 function mostrarHeroes(heroes) {
 
-    // Filtramos los héroes por Marvel y los mostramos
-    const marvelHeroes = heroes.filter(heroe => heroe.grupo === 'marvel');
-    if (marvelHeroes.length > 0) {
-        tarjetascontenedorMarvel.innerHTML = `
-            <div class="col-12 alert fs-4">
-                <h2>MARVEL</h2>
-                <hr>
-            </div>
-        `;
-        marvelHeroes.forEach(heroe => {
-            tarjetascontenedorMarvel.innerHTML += `
+    for (let i = 0; i < heroes.length; i++) {
+        const heroe = heroes[i];
+        if (heroe.grupo === 'marvel') {
+            document.getElementById('contenidoMarvel').innerHTML += `
                 <div class="col-lg-4 tarjeta">
                     <a href="superheroe.html?id=${heroe.id}">
                         <div>
-                            <img src="${heroe.imagen1}" alt="${heroe.nombre}">
-                            <div>${heroe.precio} €</div>
+                            <img src="${heroe.imagen1}">
+                            <div>${heroe.precio}</div>
                         </div>
                         <h4 class="text-center">${heroe.nombre}</h4>
                     </a>
                 </div>
             `;
-        });
+        }
     }
 
-    // Repetimos el mismo proceso para los héroes de DC
-    const dcHeroes = heroes.filter(heroe => heroe.grupo === 'dc');
-    if (dcHeroes.length > 0) {
-        tarjetascontenedorDC.innerHTML = `
-            <div class="col-12 alert fs-4">
-                <h2>DC</h2>
-                <hr>
-            </div>
-        `;
-        dcHeroes.forEach(heroe => {
-            tarjetascontenedorDC.innerHTML += `
+    for (let i = 0; i < heroes.length; i++) {
+        const heroe = heroes[i];
+        if (heroe.grupo === 'dc') {
+            document.getElementById('contenidoDC').innerHTML += `
                 <div class="col-lg-4 tarjeta">
                     <a href="superheroe.html?id=${heroe.id}">
                         <div>
-                            <img src="${heroe.imagen1}" alt="${heroe.nombre}">
-                            <div>${heroe.precio} €</div>
+                            <img src="${heroe.imagen1}">
+                            <div>${heroe.precio}</div>
                         </div>
                         <h4 class="text-center">${heroe.nombre}</h4>
                     </a>
                 </div>
             `;
-        });
+        }
     }
 }
+
+const filtroinput = document.getElementById('barraBusqueda');
+const filtroMarvel = document.getElementById('contenidoMarvel');
+const filtroDC = document.getElementById('contenidoDC');
+
+filtroinput.addEventListener('keyup', function () {
+    const filtroTexto = filtroinput.value.toLowerCase();
+
+    const tarjetasMarvel = filtroMarvel.querySelectorAll('.tarjeta');
+    tarjetasMarvel.forEach(tarjeta => {
+        const titulo = tarjeta.querySelector('h4').textContent.toLowerCase();
+        if (titulo.includes(filtroTexto)) {
+            tarjeta.style.display = '';
+        } else {
+            tarjeta.style.display = 'none';
+        }
+    });
+
+    const tarjetasDC = filtroDC.querySelectorAll('.tarjeta');
+    tarjetasDC.forEach(tarjeta => {
+        const titulo = tarjeta.querySelector('h4').textContent.toLowerCase();
+        if (titulo.includes(filtroTexto)) {
+            tarjeta.style.display = '';
+        } else {
+            tarjeta.style.display = 'none';
+        }
+    });
+});
 
 lecturaJSON();
