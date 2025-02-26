@@ -96,15 +96,3 @@ body {
 .card:hover {
     transform: scale(1.01);
 }
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .menu-superior {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .form-control {
-        width: 80%;
-    }
-}
